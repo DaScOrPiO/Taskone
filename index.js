@@ -19,7 +19,7 @@ function getCurrentUtcTime() {
 const now = new Date();
 const timeUtc = now.toISOString().split(".")[0] + "Z";
 const day = moment().format("dddd");
-const utcTime = getCurrentUtcTime();
+// const utcTime = getCurrentUtcTime();
 const githubFileUrl = "https://github.com/DaScOrPiO/Taskone/blob/main/index.js";
 const repoUrl = "https://github.com/DaScOrPiO/Taskone";
 
