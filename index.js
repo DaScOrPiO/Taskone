@@ -4,8 +4,21 @@ const moment = require("moment");
 
 const port = process.env.PORT || 3000;
 
+function getCurrentUtcTime() {
+  const currentTime = moment.utc();
+  const allowedDifference = 2000;
+  const serverTime = moment();
+  const timeDifference = Math.abs(currentTime.diff(serverTime));
+
+  if (timeDifference <= allowedDifference) {
+    return currentTime.format("YYYY-MM-DD HH:mm:ss");
+  } else {
+    return null;
+  }
+}
+
 const day = moment().format("dddd");
-const utcTime = moment.utc().format("YYYY-MM-DD HH:mm:ss");
+const utcTime = getCurrentUtcTime();
 const githubFileUrl = "https://github.com/DaScOrPiO/Taskone/blob/main/index.js";
 const repoUrl = "https://github.com/DaScOrPiO/Taskone";
 
