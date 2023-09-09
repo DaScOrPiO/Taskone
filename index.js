@@ -11,12 +11,13 @@ function getCurrentUtcTime() {
   const timeDifference = Math.abs(currentTime.diff(serverTime));
 
   if (timeDifference <= allowedDifference) {
-    return currentTime.format("h:mm:ss a");
+    return currentTime.format("YYYY-MM-DD HH:mm:ss");
   } else {
     return null;
   }
 }
-
+const now = new Date();
+const timeUtc = now.toISOString().split(".")[0] + "Z";
 const day = moment().format("dddd");
 const utcTime = getCurrentUtcTime();
 const githubFileUrl = "https://github.com/DaScOrPiO/Taskone/blob/main/index.js";
@@ -30,7 +31,7 @@ app.get("/api", (req, res) => {
   const values = {
     slack_name: slack_name,
     current_day: day,
-    utc_time: utcTime,
+    utc_time: timeUtc,
     track: track,
     github_file_url: githubFileUrl,
     github_repo_url: repoUrl,
