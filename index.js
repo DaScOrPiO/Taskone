@@ -6,8 +6,8 @@ const port = process.env.PORT || 3000;
 
 const day = moment().format("dddd");
 const utcTime = moment.utc().format();
-const githubFileUrl = "https://www.github.com/DaScOrpIo/file.js";
-const repoUrl = "https://www.github.com/DaScOrPiO/repo";
+const githubFileUrl = "https://github.com/DaScOrPiO/Taskone/blob/main/index.js";
+const repoUrl = "https://github.com/DaScOrPiO/Taskone";
 
 app.get("/api", (req, res) => {
   const slack_name = req.query.slack_name || "DaScOrPiO";
