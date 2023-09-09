@@ -5,7 +5,7 @@ const moment = require("moment");
 const port = process.env.PORT || 3000;
 
 const day = moment().format("dddd");
-const utcTime = moment.utc().format();
+const utcTime = moment.utc().format("YYYY-MM-DD HH:mm:ss");
 const githubFileUrl = "https://github.com/DaScOrPiO/Taskone/blob/main/index.js";
 const repoUrl = "https://github.com/DaScOrPiO/Taskone";
 
