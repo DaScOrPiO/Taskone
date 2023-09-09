@@ -11,7 +11,7 @@ function getCurrentUtcTime() {
   const timeDifference = Math.abs(currentTime.diff(serverTime));
 
   if (timeDifference <= allowedDifference) {
-    return currentTime.format("ddd MMM DD YYYY HH:mm:ss [GMT]ZZ (zz)");
+    return currentTime.format("h:mm:ss a");
   } else {
     return null;
   }
